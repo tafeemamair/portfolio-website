@@ -293,7 +293,7 @@ export default function Home() {
             <h3>Flexible engagement</h3>
             <p>Small tasks, focused projects, or larger engagements.</p>
           </article>
-          <article className="service-card">
+          <article className="service-card why-card-full">
             <span className="service-number">05</span>
             <h3>Clear communication</h3>
             <p>Practical explanations without unnecessary jargon.</p>
