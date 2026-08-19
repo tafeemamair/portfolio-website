@@ -1,4 +1,4 @@
-# Aisan Tafeem Amair — Portfolio
+# Aisan Tafeem Amair - Portfolio
 
 Personal professional portfolio for Aisan Tafeem Amair.
 
