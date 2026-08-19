@@ -92,6 +92,16 @@ em { font-style: normal; color: var(--accent); }
 .mini-chart { height: 70px; display: flex; align-items: end; gap: 8px; margin-top: 25px; }
 .mini-chart b { width: 16px; background: var(--accent); opacity: .8; }
 .mini-chart b:nth-child(1) { height: 25%; }.mini-chart b:nth-child(2) { height: 45%; }.mini-chart b:nth-child(3) { height: 35%; }.mini-chart b:nth-child(4) { height: 65%; }.mini-chart b:nth-child(5) { height: 52%; }.mini-chart b:nth-child(6) { height: 85%; }
+.video-factory-art { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; }
+.video-factory-phone { position: relative; z-index: 1; width: 152px; height: 264px; padding: 12px; border: 1px solid #4c5533; background: #0a0a0a; box-shadow: 0 28px 70px #000; transform: perspective(900px) rotateY(-10deg) rotateX(5deg); }
+.video-factory-label { display: block; color: var(--accent); font: 9px "DM Mono", monospace; letter-spacing: .12em; }
+.video-factory-frame { height: 166px; margin-top: 12px; padding: 12px; background: linear-gradient(145deg, #263114, #101409 65%); border: 1px solid #3b4328; display: flex; flex-direction: column; justify-content: space-between; }
+.video-factory-frame i { width: 34px; height: 34px; display: block; border: 1px solid rgba(216,255,79,.7); border-radius: 50%; box-shadow: 0 0 28px rgba(216,255,79,.3); }
+.video-factory-frame b { font: 700 13px/1.05 "DM Mono", monospace; letter-spacing: -.06em; }
+.video-factory-captions { margin-top: 10px; display: grid; gap: 4px; }
+.video-factory-captions span { height: 4px; background: #777; }.video-factory-captions span:nth-child(1) { width: 88%; background: var(--accent); }.video-factory-captions span:nth-child(2) { width: 66%; }.video-factory-captions span:nth-child(3) { width: 76%; }
+.video-factory-timeline { position: absolute; z-index: 2; left: 11%; right: 11%; bottom: 10%; display: flex; align-items: center; gap: 8px; color: #8c8c82; font: 8px "DM Mono", monospace; }
+.video-factory-timeline i { flex: 1; height: 1px; background: #414438; }.video-factory-timeline b { color: var(--accent); font: 8px "DM Mono", monospace; }
 .project-content { padding: 30px; }
 .project-content h3, .coming-soon h3 { font-size: 29px; letter-spacing: -.04em; margin: 12px 0; }
 .project-content p, .coming-soon p { color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 600px; }

@@ -40,6 +40,14 @@ const projects = [
     tech: ["Next.js", "React", "OpenAI", "Razorpay"],
     href: "https://github.com/tafeemamair/creator-retention-coach",
   },
+  {
+    tag: "AI / AUTOMATION",
+    title: "AI Video Factory",
+    description:
+      "A scene-driven video production pipeline that transforms structured scripts into captioned vertical videos using local visual assets, audio, subtitles, FFmpeg rendering, validation, and automated assembly.",
+    tech: ["Python", "FFmpeg", "Automation", "Video Processing"],
+    href: "https://github.com/tafeemamair/ai-video-factory",
+  },
 ];
 
 const technologies = [
@@ -154,15 +162,26 @@ export default function Home() {
             <article className="project-card" key={project.title}>
               <div className="project-art">
                 <div className="project-glow" />
-                <div className="project-window">
-                  <div className="window-bar"><i /><i /><i /></div>
-                  <div className="window-body">
-                    <span>CREATOR</span>
-                    <strong>RETENTION</strong>
-                    <small>AI COACH</small>
-                    <div className="mini-chart"><b /><b /><b /><b /><b /><b /></div>
+                {project.title === "AI Video Factory" ? (
+                  <div className="video-factory-art" aria-hidden="true">
+                    <div className="video-factory-phone">
+                      <span className="video-factory-label">SCENE 04</span>
+                      <div className="video-factory-frame"><i /><b>CAPTIONS<br />IN MOTION</b></div>
+                      <div className="video-factory-captions"><span /><span /><span /></div>
+                    </div>
+                    <div className="video-factory-timeline"><span>01</span><i /><span>02</span><i /><span>03</span><i /><b>RENDER</b></div>
                   </div>
-                </div>
+                ) : (
+                  <div className="project-window">
+                    <div className="window-bar"><i /><i /><i /></div>
+                    <div className="window-body">
+                      <span>CREATOR</span>
+                      <strong>RETENTION</strong>
+                      <small>AI COACH</small>
+                      <div className="mini-chart"><b /><b /><b /><b /><b /><b /></div>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="project-content">
                 <span className="project-tag">{project.tag}</span>
