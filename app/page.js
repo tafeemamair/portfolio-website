@@ -36,7 +36,7 @@ const projects = [
     tag: "AI APPLICATION",
     title: "Creator Retention Coach",
     description:
-      "A full-stack AI application designed around creator retention and engagement workflows.",
+      "An AI application that helps creators understand audience retention and engagement by analysing behavioural signals and delivering practical, personalised guidance to improve content strategy.",
     tech: ["Next.js", "React", "OpenAI", "Razorpay"],
     href: "https://github.com/tafeemamair/creator-retention-coach",
   },
@@ -44,7 +44,7 @@ const projects = [
     tag: "AI / AUTOMATION",
     title: "AI Video Factory",
     description:
-      "A scene-driven video production pipeline that transforms structured scripts into captioned vertical videos using local visual assets, audio, subtitles, FFmpeg rendering, validation, and automated assembly.",
+      "An automated pipeline that turns structured scripts and visual/audio assets into rendered, captioned short-form videos—streamlining production and removing repetitive manual editing steps.",
     tech: ["Python", "FFmpeg", "Automation", "Video Processing"],
     href: "https://github.com/tafeemamair/ai-video-factory",
   },
@@ -107,6 +107,20 @@ export default function Home() {
         <div><strong>BUILD</strong><span>Practical · Clear · Outcome-focused</span></div>
       </div>
 
+      {/* FREELANCE EXPERIENCE */}
+      <section id="freelance-experience" className="section freelance-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-kicker">FREELANCE EXPERIENCE</span>
+            <h2>Proven client experience.</h2>
+          </div>
+          <p>⭐ 4.9/5 rating across 10+ client reviews<br/>13+ completed orders on Fiverr<br/>Research, virtual assistance & business support for international clients<br/>Currently expanding into data analysis & AI/ML freelance work</p>
+        </div>
+        <div className="freelance-cta">
+          <a className="button secondary" href="https://www.fiverr.com/tafeem_amair" target="_blank" rel="noreferrer">View Fiverr Profile ↗</a>
+        </div>
+      </section>
+
       <section id="services" className="section services-section">
         <div className="section-heading">
           <div>
@@ -127,24 +141,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section micro-services-section" aria-labelledby="micro-services-heading">
+      {/* QUICK DATA & AUTOMATION SERVICES (replaces micro-services content) */}
+      <section id="quick-data" className="section micro-services-section" aria-labelledby="quick-data-heading">
         <div className="section-heading micro-services-heading">
           <div>
-            <span className="section-kicker">MICRO SERVICES</span>
-            <h2 id="micro-services-heading">Small tasks.<br /><em>Practical solutions.</em></h2>
+            <span className="section-kicker">QUICK DATA & AUTOMATION SERVICES</span>
+            <h2 id="quick-data-heading">Need something solved quickly?</h2>
           </div>
-          <p>Not every problem needs a full-scale project. I offer focused help for smaller, well-defined technical, data, and AI tasks.</p>
+          <p>I help with short, focused tasks that get you a working result fast.</p>
         </div>
-        <div className="micro-services-grid">
-          {microServices.map((service, index) => (
-            <article className="micro-service-card" key={service}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{service}</h3>
-            </article>
-          ))}
+        <div className="quick-services-copy">
+          <p><strong>Need cleaner data?</strong><br/>I'll clean, organize and transform messy spreadsheets and datasets into analysis-ready data.</p>
+          <p><strong>Need Excel formulas or automation?</strong><br/>I'll build formulas, pivot tables and automated workflows that reduce repetitive work.</p>
+          <p><strong>Need a SQL query written?</strong><br/>I'll write and optimize queries to extract the data you need.</p>
+          <p><strong>Need a dashboard?</strong><br/>I'll turn raw numbers into clear, actionable dashboards.</p>
+          <p><strong>Need a Python script fixed or built?</strong><br/>I'll debug existing code or build a script around your requirements.</p>
+          <p><strong>Need data scraped or extracted?</strong><br/>I'll extract structured information from websites or documents into a usable format.</p>
+          <p><strong>Need a repetitive workflow automated?</strong><br/>I'll automate repeatable processes using Python and AI where appropriate.</p>
         </div>
         <div className="micro-services-cta">
-          <p>Have a small task? Tell me what you need. I&apos;ll review the requirements and confirm the scope, price, and turnaround.</p>
+          <p><strong>Have a small task? Tell me what you need — I'll confirm scope, price, and turnaround.</strong></p>
           <a className="button primary" href="#contact">Send Me the Task <span>↗</span></a>
         </div>
       </section>
@@ -153,7 +169,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <span className="section-kicker">SELECTED WORK</span>
-            <h2>Things I&apos;ve<br /><em>built.</em></h2>
+            <h2>Practical projects across AI, automation, and data-driven applications.</h2>
           </div>
           <a className="text-link" href="https://github.com/tafeemamair" target="_blank" rel="noreferrer">View GitHub ↗</a>
         </div>
@@ -192,15 +208,28 @@ export default function Home() {
               </div>
             </article>
           ))}
-          <article className="project-card coming-soon">
-            <div>
-              <span className="project-tag">IN PROGRESS</span>
-              <h3>More projects<br /><em>coming soon.</em></h3>
-              <p>I&apos;m continuously building practical projects across data science, machine learning, AI, and automation.</p>
-              <a className="project-link" href="https://github.com/tafeemamair" target="_blank" rel="noreferrer">Follow the work <span>↗</span></a>
-            </div>
-            <div className="plus">+</div>
-          </article>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section id="testimonials" className="section testimonials-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-kicker">TESTIMONIALS</span>
+            <h2>What clients say.</h2>
+          </div>
+        </div>
+        <div className="testimonials-grid">
+          <div className="testimonial-card">
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+            <blockquote>"Excellent work done on time, nice communication."</blockquote>
+            <cite>— Fiverr client, Research & Business Support</cite>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+            <blockquote>"Exceeded expectations — professionalism, quick responsiveness, went above and beyond."</blockquote>
+            <cite>— Fiverr client, Business Support Project</cite>
+          </div>
         </div>
       </section>
 
@@ -208,27 +237,67 @@ export default function Home() {
         <div className="about-number">02</div>
         <div className="about-copy">
           <span className="section-kicker">ABOUT ME</span>
-          <h2>Turning technical skills into <em>practical solutions.</em></h2>
-          <p>
-            I&apos;m Aisan Tafeem Amair, a Data Scientist, Machine Learning Engineer,
-            and AI Solutions Freelancer.
-          </p>
-          <p>
-            My background is in Mechanical Engineering, and over time I transitioned
-            into data science, machine learning, software development, and artificial intelligence.
-          </p>
-          <p>
-            Today, I work across data analysis, machine learning, AI applications,
-            automation, and technical problem-solving.
-          </p>
-          <p>
-            I enjoy taking a problem that initially looks complicated, breaking it
-            down into manageable parts, and building a practical solution around it.
-          </p>
+          <h2>Engineering discipline. <em>Data-driven thinking. AI-powered solutions.</em></h2>
+          <p>I'm Aisan Tafeem Amair, a Data Scientist, Machine Learning Engineer, and AI Solutions Freelancer.</p>
+          <p>My background in Mechanical Engineering trained me to approach problems systematically — breaking complex problems down, understanding constraints, and working toward practical solutions. I later transitioned into Data Science, Machine Learning, and AI, combining that engineering discipline with modern data and AI technologies.</p>
+          <p>Today, I work across data analysis, machine learning, AI applications, automation, and technical problem-solving — with a focus on building solutions that are useful, practical, and understandable.</p>
         </div>
         <div className="about-side">
           <div className="quote-mark">“</div>
           <p>Understand the problem.<br />Work with the data.<br />Build the solution.<br /><strong>Deliver something useful.</strong></p>
+        </div>
+      </section>
+
+      {/* TECHNICAL FOCUS */}
+      <section className="section tech-focus-section">
+        <div>
+          <span className="section-kicker">TECHNICAL FOCUS</span>
+          <h2>Areas I focus on.</h2>
+        </div>
+        <div className="tech-cloud">
+          <span>Data Analysis</span>
+          <span>Machine Learning</span>
+          <span>AI & LLM Applications</span>
+          <span>Automation</span>
+          <span>Python & SQL</span>
+          <span>Dashboards & Visualization</span>
+        </div>
+      </section>
+
+      {/* WHY WORK WITH ME */}
+      <section id="why" className="section why-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-kicker">WHY WORK WITH ME</span>
+            <h2>What you get, working together.</h2>
+          </div>
+        </div>
+        <div className="services-grid">
+          <article className="service-card">
+            <span className="service-number">01</span>
+            <h3>Engineering mindset</h3>
+            <p>Structured, systematic problem solving.</p>
+          </article>
+          <article className="service-card">
+            <span className="service-number">02</span>
+            <h3>Data-first approach</h3>
+            <p>Decisions backed by evidence, not guesswork.</p>
+          </article>
+          <article className="service-card">
+            <span className="service-number">03</span>
+            <h3>End-to-end delivery</h3>
+            <p>From analysis and modeling to implementation.</p>
+          </article>
+          <article className="service-card">
+            <span className="service-number">04</span>
+            <h3>Flexible engagement</h3>
+            <p>Small tasks, focused projects, or larger engagements.</p>
+          </article>
+          <article className="service-card">
+            <span className="service-number">05</span>
+            <h3>Clear communication</h3>
+            <p>Practical explanations without unnecessary jargon.</p>
+          </article>
         </div>
       </section>
 
