@@ -70,6 +70,15 @@ em { font-style: normal; color: var(--accent); }
 .tag-list, .tech-list { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 24px; }
 .tag-list span, .tech-list span, .tech-cloud span { border: 1px solid var(--line); padding: 7px 9px; color: #898982; font: 9px "DM Mono", monospace; }
 
+.micro-services-section { padding: 130px 0; border-top: 1px solid var(--line); }
+.micro-services-heading { margin-bottom: 45px; }
+.micro-services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.micro-service-card { min-height: 150px; padding: 20px; border: 1px solid var(--line); background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; }
+.micro-service-card span { color: var(--accent); font: 10px "DM Mono", monospace; }
+.micro-service-card h3 { margin: 28px 0 0; font-size: 16px; line-height: 1.2; letter-spacing: -.03em; }
+.micro-services-cta { display: flex; align-items: center; justify-content: space-between; gap: 35px; margin-top: 34px; padding: 27px 0 0; border-top: 1px solid var(--line); }
+.micro-services-cta p { max-width: 640px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
 .project-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; }
 .project-card { border: 1px solid var(--line); background: var(--surface); overflow: hidden; }
 .project-art { height: 350px; position: relative; background: #0e100b; overflow: hidden; }
@@ -132,6 +141,9 @@ em { font-style: normal; color: var(--accent); }
   .section-heading { align-items: start; flex-direction: column; margin-bottom: 40px; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: auto; padding: 28px; }
+  .micro-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .micro-service-card { min-height: 130px; }
+  .micro-services-cta { align-items: flex-start; flex-direction: column; }
   .project-art { height: 280px; }
   .about-section { gap: 25px; padding: 100px 0; }
   .about-side { border-left: 0; border-top: 1px solid var(--line); padding: 35px 0 0; }
@@ -150,6 +162,8 @@ em { font-style: normal; color: var(--accent); }
   .process-item { border-right: 0; border-bottom: 1px solid var(--line); margin-right: 0; padding-bottom: 30px; }
   .project-window { width: 82%; left: 9%; }
   .window-body strong { font-size: 24px; }
+  .micro-services-grid { grid-template-columns: 1fr; }
+  .micro-service-card { min-height: 110px; }
 }
 
 .trust-strip {

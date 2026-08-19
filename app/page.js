@@ -1,28 +1,34 @@
 const services = [
   {
     number: "01",
-    title: "Data Science & Analytics",
+    title: "Data Analysis & Business Intelligence",
     text: "Turn raw data into clear insights that help teams understand what is happening and decide what to do next.",
-    items: ["Data cleaning", "Exploratory analysis", "Predictive analytics", "Data visualization"],
+    items: ["Data cleaning", "Exploratory analysis", "Business insights", "Dashboards"],
   },
   {
     number: "02",
-    title: "Machine Learning",
+    title: "Machine Learning Solutions",
     text: "Build predictive models that uncover patterns, forecast outcomes, and support better decisions.",
     items: ["Classification", "Regression", "Forecasting", "Model evaluation"],
   },
   {
     number: "03",
-    title: "AI Solutions & Automation",
+    title: "AI Applications & LLM Solutions",
     text: "Build useful AI applications and automate repetitive workflows with modern models and APIs.",
-    items: ["AI applications", "LLM solutions", "AI automation", "API integrations"],
+    items: ["AI assistants", "LLM solutions", "RAG / knowledge tools", "API integrations"],
   },
   {
     number: "04",
-    title: "Dashboards & Reporting",
-    text: "Turn complex datasets into clear dashboards and reports that people can actually use.",
-    items: ["Python", "SQL", "Excel", "Tableau"],
+    title: "AI & Data Automation",
+    text: "Turn repetitive data and information workflows into practical, automated processes.",
+    items: ["Data workflows", "Report automation", "AI automation", "Custom tools"],
   },
+];
+
+const microServices = [
+  "Excel & CSV Cleanup", "Data Analysis", "Python Scripts & Fixes", "SQL Queries",
+  "Dashboard Creation", "Web Scraping", "Data Conversion", "Report Automation",
+  "AI / API Integration", "Bug Fixes & Troubleshooting",
 ];
 
 const projects = [
@@ -110,6 +116,28 @@ export default function Home() {
               <div className="tag-list">{service.items.map((item) => <span key={item}>{item}</span>)}</div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section micro-services-section" aria-labelledby="micro-services-heading">
+        <div className="section-heading micro-services-heading">
+          <div>
+            <span className="section-kicker">MICRO SERVICES</span>
+            <h2 id="micro-services-heading">Small tasks.<br /><em>Practical solutions.</em></h2>
+          </div>
+          <p>Not every problem needs a full-scale project. I offer focused help for smaller, well-defined technical, data, and AI tasks.</p>
+        </div>
+        <div className="micro-services-grid">
+          {microServices.map((service, index) => (
+            <article className="micro-service-card" key={service}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{service}</h3>
+            </article>
+          ))}
+        </div>
+        <div className="micro-services-cta">
+          <p>Have a small task? Tell me what you need. I&apos;ll review the requirements and confirm the scope, price, and turnaround.</p>
+          <a className="button primary" href="#contact">Send Me the Task <span>↗</span></a>
         </div>
       </section>
 
@@ -221,8 +249,8 @@ export default function Home() {
       <section id="contact" className="contact-section">
         <div className="contact-inner">
           <span className="section-kicker">LET&apos;S TALK</span>
-          <h2>Have a problem<br />you&apos;d like to <em>solve?</em></h2>
-          <p>Tell me what you&apos;re working on and what you&apos;d like to achieve. Let&apos;s see if I can help.</p>
+          <h2>Have a small task you&apos;d like to get done?</h2>
+          <p>Send me the details of what you need. I&apos;ll review the task and get back to you with the scope, price, and expected turnaround.</p>
           <a className="contact-email" href="mailto:aisantafeem@gmail.com">aisantafeem@gmail.com <span>↗</span></a>
           <div className="socials">
             <a href="https://github.com/tafeemamair" target="_blank" rel="noreferrer">GitHub ↗</a>
