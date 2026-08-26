@@ -170,6 +170,14 @@ const projects = [
     tech: ["Python", "FFmpeg", "Automation", "Video Processing"],
     href: "https://github.com/tafeemamair/ai-video-factory",
   },
+  {
+    tag: "AI / COMPUTER VISION",
+    title: "Emotion Detection System",
+    description:
+      "A deep learning-based facial emotion detection application that analyzes uploaded facial images and predicts one of seven emotions using a trained CNN model.",
+    tech: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Tkinter"],
+    href: "https://github.com/tafeemamair/Emotion_Detection",
+  },
 ];
 
 const technologies = [
@@ -314,7 +322,8 @@ function HeroVisualizer() {
 function CaseStudy({ project }) {
   const [activeTab, setActiveTab] = useState("overview");
   const isVideoFactory = project.title === "AI Video Factory";
-
+  const isEmotionDetection = project.title === "Emotion Detection System";
+ 
   return (
     <article className="case-study">
       <div className="case-study-visual">
@@ -345,6 +354,20 @@ function CaseStudy({ project }) {
                 OUTPUT: Rendered Captioned Video
               </div>
             </div>
+          ) : isEmotionDetection ? (
+            <div style={{ width: "100%", padding: "0 10px", display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+              <img 
+                src="/emotion-detector-demo.png" 
+                alt="Emotion Detection System" 
+                style={{ 
+                  maxWidth: "100%", 
+                  maxHeight: "260px", 
+                  objectFit: "contain",
+                  border: "1px solid var(--line)",
+                  borderRadius: "2px"
+                }} 
+              />
+            </div>
           ) : (
             <div style={{ width: "100%", padding: "0 10px", display: "flex", flexDirection: "column", gap: "10px", fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--text)" }}>
               <div style={{ border: "1px solid var(--line)", padding: "8px", background: "rgba(255,255,255,0.01)", textAlign: "center" }}>
@@ -368,7 +391,7 @@ function CaseStudy({ project }) {
             </div>
           )}
         </div>
-
+ 
         <div className="case-study-visual-footer">
           <span style={{ font: "400 9px 'DM Mono', monospace", color: "var(--muted)" }}>ENG_FLOW_v1.0</span>
           <span style={{ font: "400 9px 'DM Mono', monospace", color: "var(--muted)" }}>STATUS: COMPILED</span>
@@ -402,12 +425,14 @@ function CaseStudy({ project }) {
             SOLUTION
           </button>
         </div>
-
+ 
         <div className="case-study-tab-pane">
           {activeTab === "overview" && (
             <div>
               {isVideoFactory ? (
                 <p>Creating short-form video content manually requires intensive friction: writing structural scripts, recording audio assets, lining up captions frame-by-frame, and editing final files. The challenge was building an end-to-end automated pipeline to eliminate manual editing bottlenecks entirely.</p>
+              ) : isEmotionDetection ? (
+                <p>Analyzing facial cues to classify human emotions requires both robust deep learning models and clean user interfaces. The challenge was building a lightweight, local system that pre-processes facial inputs, executes real-time inference, and accurately maps facial structures to emotional categories.</p>
               ) : (
                 <p>Audience retention is critical for digital creators, but understanding raw analytics dashboard signals can be difficult and leads to guesswork. The challenge was creating a client-facing intelligent coach that parses engagement files and outputs clear, personalized improvement guidelines.</p>
               )}
@@ -417,6 +442,8 @@ function CaseStudy({ project }) {
             <div>
               {isVideoFactory ? (
                 <p>Developed an automated pipeline using Python to orchestrate assets. Custom script logic processes dynamic captions alignment and times frames with audio signals. FFmpeg is leveraged in the background as the rendering core to layer audio and video streams together.</p>
+              ) : isEmotionDetection ? (
+                <p>Trained a Convolutional Neural Network (CNN) using TensorFlow and Keras on dataset benchmarks. Integrated OpenCV for image loading, preprocessing, and face detection cascades. Developed a desktop UI using Tkinter to allow users to upload images and review emotion predictions instantly.</p>
               ) : (
                 <p>Designed a Next.js framework integrating OpenAI's API. The pipeline processes uploaded engagement graphs and passes behavioral prompts to LLM endpoints trained on optimal retention schemas. Handled payments and gatekeeping using a Razorpay payment flow.</p>
               )}
@@ -426,19 +453,21 @@ function CaseStudy({ project }) {
             <div>
               {isVideoFactory ? (
                 <p>A fully functioning automated toolchain. By providing structured scripts and assets, the pipeline outputs dynamic, rendered videos with embedded, synced captions, streamlining production workflows and reducing manual creation effort.</p>
+              ) : isEmotionDetection ? (
+                <p>A standalone desktop application. Upon image upload, the pipeline detects and isolates facial bounds, runs CNN inference, and provides visual confidence charts mapping the detected face to one of seven core emotional states.</p>
               ) : (
                 <p>An interactive, payment-gated web tool. Creators purchase access, upload their retention data, and receive structured, prompt-generated video strategy recommendations directly inside their dashboard interface.</p>
               )}
             </div>
           )}
         </div>
-
+ 
         <div className="case-study-tech">
           {project.tech.map((t) => (
             <span key={t}>{t}</span>
           ))}
         </div>
-
+ 
         <div className="case-study-links">
           <a className="case-study-link" href={project.href} target="_blank" rel="noreferrer">
             View Source Code <span>↗</span>
