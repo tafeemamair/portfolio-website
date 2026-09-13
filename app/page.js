@@ -270,31 +270,31 @@ const TechLogos = {
 const services = [
   {
     number: "01",
-    icon: Icons.Data,
-    title: "Data Analysis & Business Intelligence",
-    text: "Turn raw data into clear insights that help teams understand what is happening and decide what to do next.",
-    items: ["Data cleaning", "Exploratory analysis", "Business insights", "Dashboards"],
+    icon: Icons.AI,
+    title: "AI Agents & Intelligent Systems",
+    text: "Build AI systems that reason over structured context, use tools, validate results, and operate inside explicit business rules.",
+    items: ["Agent workflows", "Tool use", "Guardrails", "Human approval"],
   },
   {
     number: "02",
-    icon: Icons.ML,
-    title: "Machine Learning Solutions",
-    text: "Build predictive models that uncover patterns, forecast outcomes, and support better decisions.",
-    items: ["Classification", "Regression", "Forecasting", "Model evaluation"],
+    icon: Icons.Automation,
+    title: "Workflow Automation & Orchestration",
+    text: "Turn multi-step operational work into reliable workflows with clear state, recovery paths, and auditable execution.",
+    items: ["API workflows", "Task orchestration", "Failure recovery", "Audit trails"],
   },
   {
     number: "03",
-    icon: Icons.AI,
-    title: "AI Applications & LLM Solutions",
-    text: "Build useful AI applications and automate repetitive workflows with modern models and APIs.",
-    items: ["AI assistants", "LLM solutions", "RAG / knowledge tools", "API integrations"],
+    icon: Icons.ML,
+    title: "Machine Learning & Applied AI",
+    text: "Apply machine learning and modern AI to real problems, from predictive models and computer vision to practical LLM applications.",
+    items: ["Predictive models", "Computer vision", "LLM applications", "Model evaluation"],
   },
   {
     number: "04",
-    icon: Icons.Automation,
-    title: "AI & Data Automation",
-    text: "Turn repetitive data and information workflows into practical, automated processes.",
-    items: ["Data workflows", "Report automation", "AI automation", "Custom tools"],
+    icon: Icons.Data,
+    title: "Data Analysis & Decision Systems",
+    text: "Turn raw data into structured signals, insights, and decision-ready outputs that support better products and operations.",
+    items: ["Data cleaning", "Exploratory analysis", "Analytics", "Dashboards"],
   },
 ];
 
@@ -431,35 +431,76 @@ wb.save("weekly_report_automated.xlsx")`
 
 const projects = [
   {
+    tag: "AUTONOMOUS AI AGENT",
+    title: "Taf’s Pilot",
+    description: "An autonomous AI video-production agent that plans work, uses typed tools, asks for human input when needed, inspects generated media, and self-corrects before delivery.",
+    tech: ["Amazon Strands", "AWS Bedrock", "Pydantic", "FFmpeg", "FFprobe"],
+    href: "https://github.com/tafeemamair/Tafs-Pilot",
+    flow: ["Understand", "Plan", "Ask", "Produce", "Inspect", "Correct", "Deliver"],
+    challenge: "Video production becomes difficult to scale when planning, asset generation, rendering, inspection, and correction are disconnected manual steps.",
+    approach: "Built an agentic production loop around Amazon Strands with typed tools, structured state, human-in-the-loop checkpoints, media inspection, and deterministic rendering/QC layers.",
+    solution: "A working autonomous production system that can move from a production brief to a rendered vertical video while retaining explicit control points and recovery behavior."
+  },
+  {
+    tag: "BUSINESS WORKFLOW AGENT",
+    title: "AI Operations Agent",
+    description: "An agentic operations system that converts natural-language requests into planned, tool-driven workflows with deterministic validation, human approval, failure recovery, and persistent audit events.",
+    tech: ["OpenAI Agents SDK", "FastAPI", "Pydantic", "SQLite", "Next.js"],
+    href: "https://github.com/tafeemamair/ai-operations-agent",
+    flow: ["Request", "Plan", "Tools", "Validate", "Approve", "Recover", "Audit"],
+    challenge: "Business workflows need more than an LLM response: actions must have explicit state, validation, approval boundaries, and predictable failure handling.",
+    approach: "Designed a structured workflow engine around the OpenAI Agents SDK, deterministic tool contracts, Pydantic state, bounded retries, approval gates, SQLite persistence, and an operations console.",
+    solution: "A demonstrable onboarding workflow that researches a company, creates artifacts, pauses for human approval, recovers from transient failures, and records the execution history."
+  },
+  {
+    tag: "TRUSTWORTHY AI AGENT",
+    title: "Verified Shopping Assistant",
+    description: "A tool-using shopping agent that separates LLM reasoning from deterministic offer verification so unverified mandatory fees cannot be presented as the cheapest confirmed deal.",
+    tech: ["Google ADK", "Gemini", "Python", "Deterministic Policy", "34 Tests"],
+    href: "https://github.com/tafeemamair/verified-shopping-assistant",
+    flow: ["Search", "Verify", "Filter", "Rank", "Explain"],
+    challenge: "The lowest listed price is not always the lowest verified price when mandatory charges or offer conditions are missing or uncertain.",
+    approach: "Used Google ADK and Gemini for agent reasoning and tool selection, while keeping eligibility, fee verification, ranking, and rejection rules deterministic and testable.",
+    solution: "A shopping assistant that can withhold an apparently cheaper offer when required charges are unverified, then explain why another verified offer is selected."
+  },
+  {
     tag: "AI APPLICATION",
     title: "Creator Retention Coach",
-    description:
-      "An AI application that helps creators understand audience retention and engagement by analysing behavioural signals and delivering practical, personalised guidance to improve content strategy.",
+    description: "An AI product that turns audience-retention signals into practical creator guidance through an interactive web experience with payment-gated access.",
     tech: ["Next.js", "React", "OpenAI", "Razorpay"],
     href: "https://github.com/tafeemamair/creator-retention-coach",
+    challenge: "Creators often have retention data without a clear path from audience signals to concrete content decisions.",
+    approach: "Combined retention analysis, an OpenAI-powered recommendation layer, an interactive dashboard, and a verified payment flow with server-side entitlement checks.",
+    solution: "A client-facing AI product that transforms uploaded retention information into structured strategy recommendations while keeping paid access behind server-side verification."
   },
   {
-    tag: "AI / AUTOMATION",
+    tag: "DETERMINISTIC AUTOMATION",
     title: "AI Video Factory",
-    description:
-      "An automated pipeline that turns structured scripts and visual/audio assets into rendered, captioned short-form videos—streamlining production and removing repetitive manual editing steps.",
-    tech: ["Python", "FFmpeg", "Automation", "Video Processing"],
+    description: "A deterministic media pipeline that turns structured scripts and assets into validated, captioned MP4 output using Python, FFmpeg, FFprobe, and explicit failure handling.",
+    tech: ["Python", "FFmpeg", "FFprobe", "Automation", "9 Tests"],
     href: "https://github.com/tafeemamair/ai-video-factory",
+    challenge: "Automated media generation still needs a reliable production layer for validation, asset handling, rendering, and output quality checks.",
+    approach: "Built a deterministic Python orchestration layer with structured script validation, content-key asset handling, subtitle generation, FFmpeg rendering, and FFprobe duration validation.",
+    solution: "A reproducible local media pipeline that converts structured project inputs into a final MP4 and fails explicitly when required production conditions are not met."
   },
   {
-    tag: "AI / COMPUTER VISION",
+    tag: "DEEP LEARNING / COMPUTER VISION",
     title: "Emotion Detection System",
-    description:
-      "A deep learning-based facial emotion detection application that analyzes uploaded facial images and predicts one of seven emotions using a trained CNN model.",
-    tech: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Tkinter"],
+    description: "A deep learning facial-emotion application using a custom CNN, OpenCV preprocessing, and a desktop interface to classify seven emotion categories.",
+    tech: ["Python", "TensorFlow", "Keras", "OpenCV", "CNN"],
     href: "https://github.com/tafeemamair/Emotion_Detection",
+    challenge: "Facial emotion classification requires a complete path from image input and face detection through preprocessing, model inference, and understandable output.",
+    approach: "Trained a CNN with TensorFlow/Keras and integrated OpenCV for image handling and face detection, with a lightweight Tkinter interface for local inference.",
+    solution: "A standalone computer-vision application that detects facial input and maps it to one of seven trained emotion classes."
   },
 ];
 
 const toolkitData = [
   { name: "Python", category: "Core Language", logo: "python", desc: "Automation, pipelines & AI scripting" },
   { name: "SQL", category: "Database & Queries", logo: "sql", desc: "Relational data extraction & cohorts" },
-  { name: "OpenAI APIs", category: "AI & LLMs", logo: "openai", desc: "Model prompting & semantic pipelines" },
+  { name: "OpenAI Agents SDK", category: "Agent Framework", logo: "openai", desc: "Tool use, structured runs & agent workflows" },
+  { name: "Google ADK", category: "Agent Framework", logo: "openai", desc: "Tool-using agent orchestration" },
+  { name: "Amazon Strands", category: "Agent Framework", logo: "openai", desc: "Agentic production workflows" },
   { name: "Pandas", category: "Data Processing", logo: "pandas", desc: "Dataframe transformation & profiling" },
   { name: "NumPy", category: "Numerical Computing", logo: "numpy", desc: "Array operations & matrix algebra" },
   { name: "Scikit-learn", category: "Machine Learning", logo: "scikit", desc: "Predictive & classification models" },
@@ -473,6 +514,9 @@ const toolkitData = [
   { name: "JavaScript", category: "Web Core", logo: "javascript", desc: "Dynamic client scripting" },
   { name: "R", category: "Statistical Analysis", logo: "r", desc: "Exploratory & hypothesis modeling" },
   { name: "Razorpay", category: "Payments / Webhooks", logo: "razorpay", desc: "Payment flow & webhook verification" },
+  { name: "FastAPI", category: "Backend / APIs", logo: "python", desc: "Typed API endpoints & service workflows" },
+  { name: "Pydantic", category: "Structured State", logo: "python", desc: "Validation, schemas & workflow state" },
+  { name: "SQLite", category: "Persistence", logo: "sql", desc: "Local workflow state & audit events" },
 ];
 
 // =========================================================
@@ -662,7 +706,7 @@ function AutomationWorkflowVisual() {
       icon: Icons.Outcome,
       status: "VERIFIED",
       tags: ["Live Dashboard", "Rendered MP4", "Client Delivery"],
-      details: "Dispatches the final verified output with zero manual intervention required."
+      details: "Delivers the validated output after explicit workflow checks and control points."
     }
   ];
 
@@ -726,6 +770,7 @@ function CaseStudy({ project }) {
   const [activeTab, setActiveTab] = useState("overview");
   const isVideoFactory = project.title === "AI Video Factory";
   const isEmotionDetection = project.title === "Emotion Detection System";
+  const hasAgentFlow = Array.isArray(project.flow);
  
   return (
     <article className="case-study">
@@ -739,7 +784,22 @@ function CaseStudy({ project }) {
         </div>
         
         <div className="case-study-diagram">
-          {isVideoFactory ? (
+          {hasAgentFlow && !isVideoFactory ? (
+            <div className="pipeline-flow">
+              {project.flow.map((step, index) => (
+                <React.Fragment key={step}>
+                  <div className={`pipeline-node ${index === 1 ? "primary" : index === project.flow.length - 1 ? "output" : ""}`}>
+                    <div className="pipeline-node-header">
+                      <span className="pipeline-node-role">{String(index + 1).padStart(2, "0")} // SYSTEM STEP</span>
+                      <span className="pipeline-node-badge">{index === 1 ? "REASONING" : index === project.flow.length - 1 ? "DELIVERY" : "CONTROLLED"}</span>
+                    </div>
+                    <div className="pipeline-node-title">{step}</div>
+                  </div>
+                  {index < project.flow.length - 1 && <div className="pipeline-arrow">↓</div>}
+                </React.Fragment>
+              ))}
+            </div>
+          ) : isVideoFactory ? (
             <div className="pipeline-flow">
               <div className="pipeline-node">
                 <div className="pipeline-node-header">
@@ -891,7 +951,9 @@ function CaseStudy({ project }) {
         <div className="case-study-tab-pane">
           {activeTab === "overview" && (
             <div>
-              {isVideoFactory ? (
+              {project.challenge ? (
+                <p>{project.challenge}</p>
+              ) : isVideoFactory ? (
                 <p>Creating short-form video content manually requires intensive friction: writing structural scripts, recording audio assets, lining up captions frame-by-frame, and editing final files. The challenge was building an end-to-end automated pipeline to eliminate manual editing bottlenecks entirely.</p>
               ) : isEmotionDetection ? (
                 <p>Analyzing facial cues to classify human emotions requires both robust deep learning models and clean user interfaces. The challenge was building a lightweight, local system that pre-processes facial inputs, executes real-time inference, and accurately maps facial structures to emotional categories.</p>
@@ -902,7 +964,9 @@ function CaseStudy({ project }) {
           )}
           {activeTab === "approach" && (
             <div>
-              {isVideoFactory ? (
+              {project.approach ? (
+                <p>{project.approach}</p>
+              ) : isVideoFactory ? (
                 <p>Developed an automated pipeline using Python to orchestrate assets. Custom script logic processes dynamic captions alignment and times frames with audio signals. FFmpeg is leveraged in the background as the rendering core to layer audio and video streams together.</p>
               ) : isEmotionDetection ? (
                 <p>Trained a Convolutional Neural Network (CNN) using TensorFlow and Keras on dataset benchmarks. Integrated OpenCV for image loading, preprocessing, and face detection cascades. Developed a desktop UI using Tkinter to allow users to upload images and review emotion predictions instantly.</p>
@@ -913,7 +977,9 @@ function CaseStudy({ project }) {
           )}
           {activeTab === "solution" && (
             <div>
-              {isVideoFactory ? (
+              {project.solution ? (
+                <p>{project.solution}</p>
+              ) : isVideoFactory ? (
                 <p>A fully functioning automated toolchain. By providing structured scripts and assets, the pipeline outputs dynamic, rendered videos with embedded, synced captions, streamlining production workflows and reducing manual creation effort.</p>
               ) : isEmotionDetection ? (
                 <p>A standalone desktop application. Upon image upload, the pipeline detects and isolates facial bounds, runs CNN inference, and provides visual confidence charts mapping the detected face to one of seven core emotional states.</p>
@@ -1075,10 +1141,9 @@ export default function Home() {
         <div className="hero-grid">
           <div className="hero-copy">
             <div className="eyebrow"><span className="dot" /> AVAILABLE FOR PROJECTS</div>
-            <h1>Building practical solutions with <em>Data, AI & Machine Learning.</em></h1>
+            <h1>Building <em>AI agents, automation, and intelligent systems.</em></h1>
             <p className="hero-text">
-              I help businesses, founders, and clients turn data, machine learning, and AI
-              into practical solutions that solve real-world problems.
+              I build practical AI systems that reason, use tools, automate workflows, and turn data into decisions — with machine learning as the foundation.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#contact">
@@ -1120,16 +1185,16 @@ export default function Home() {
         <div>
           <div className="trust-pillar-header">
             <span className="trust-pillar-icon"><Icons.AI /></span>
-            <strong>AI</strong>
+            <strong>AGENTS</strong>
           </div>
-          <span>Applications · Automation · APIs</span>
+          <span>Reasoning · Tools · Guardrails</span>
         </div>
         <div>
           <div className="trust-pillar-header">
             <span className="trust-pillar-icon"><Icons.Automation /></span>
             <strong>BUILD</strong>
           </div>
-          <span>Practical · Clear · Outcome-focused</span>
+          <span>APIs · Workflows · Production</span>
         </div>
       </div>
 
@@ -1140,9 +1205,9 @@ export default function Home() {
             <span className="section-kicker-dot" />
             CLIENT ENGAGEMENT
           </span>
-          <h2>Proven operational support.</h2>
+          <h2>Available for practical AI work.</h2>
           <p className="section-desc" style={{ marginTop: 20 }}>
-            Providing data-driven research, virtual assistance, and analytical engineering support to international clients. Currently expanding core freelance operations into dedicated machine learning and data science consulting.
+            Alongside building AI systems and data products, I remain available for focused client work across AI, automation, data analysis, and technical problem-solving.
           </p>
           <div style={{ marginTop: 32 }}>
             <a className="button secondary" href="https://www.fiverr.com/tafeem_amair" target="_blank" rel="noreferrer">
@@ -1180,10 +1245,10 @@ export default function Home() {
               <span className="section-kicker-dot" />
               SERVICES
             </span>
-            <h2>Technology that serves <em>the problem.</em></h2>
+            <h2>Systems built around <em>the problem.</em></h2>
           </div>
           <p className="section-desc">
-            I prioritize practical outcomes, structured implementation, and clear documentation over complex but unusable abstractions.
+            I focus on useful systems: explicit workflows, reliable tool use, deterministic validation, and clear delivery rather than complexity for its own sake.
           </p>
         </div>
         
@@ -1224,10 +1289,10 @@ export default function Home() {
               <span className="section-kicker-dot" />
               TECHNICAL CAPABILITIES CONSOLE
             </span>
-            <h2>Need something solved quickly?</h2>
+            <h2>Technical capabilities, in practice.</h2>
           </div>
           <p className="section-desc">
-            Explore scripts and queries mapping standard operations. Tell me what your project requires — I'll confirm scope, pricing, and execution speed.
+            Explore representative code patterns across data, automation, and AI engineering. The strongest evidence lives in the production-oriented projects below.
           </p>
         </div>
         <CapabilitiesConsole />
@@ -1241,10 +1306,10 @@ export default function Home() {
               <span className="section-kicker-dot" />
               SELECTED WORK
             </span>
-            <h2>Premium technical case studies.</h2>
+            <h2>Systems I’ve actually built.</h2>
           </div>
           <p className="section-desc">
-            A review of functional code pipelines and system designs.{" "}
+            A progression from machine learning and deterministic automation to tool-using agents and production-oriented intelligent systems.{" "}
             <a href="https://github.com/tafeemamair" target="_blank" rel="noreferrer" style={{ textDecoration: "underline", color: "var(--accent)", display: "inline-flex", alignItems: "center", gap: 4 }}>
               View GitHub <Icons.External />
             </a>
@@ -1314,10 +1379,10 @@ export default function Home() {
             <span className="section-kicker-dot" />
             ABOUT ME
           </span>
-          <h2>Engineering discipline. <em>Data-driven thinking.</em></h2>
-          <p>I'm Aisan Tafeem Amair, a Data Scientist, Machine Learning Engineer, and AI Solutions Freelancer.</p>
+          <h2>Engineering discipline. <em>AI systems thinking.</em></h2>
+          <p>I'm Aisan Tafeem Amair, an AI & ML Engineer focused on AI agents, automation, and intelligent systems.</p>
           <p>My background in Mechanical Engineering trained me to approach problems systematically — breaking complex problems down, understanding constraints, and working toward practical solutions. I later transitioned into Data Science, Machine Learning, and AI, combining that engineering discipline with modern data and AI technologies.</p>
-          <p>Today, I work across data analysis, machine learning, AI applications, automation, and technical problem-solving — with a focus on building solutions that are useful, practical, and understandable.</p>
+          <p>Today, I work across data analysis, machine learning, AI applications, agentic workflows, automation, and technical problem-solving — with a focus on building systems that are useful, testable, and understandable.</p>
         </div>
         <div className="about-quote">
           <Icons.Quote />
@@ -1336,7 +1401,7 @@ export default function Home() {
             </span>
             <h2>Technologies & capabilities.</h2>
           </div>
-          <p className="section-desc">Technologies, analytical libraries, and platforms utilized across active codebases.</p>
+          <p className="section-desc">Technologies and frameworks demonstrated across the current portfolio codebases — from ML foundations to agentic production systems.</p>
         </div>
         <div className="toolkit-grid">
           {toolkitData.map((tool) => {
@@ -1367,16 +1432,17 @@ export default function Home() {
               <span className="section-kicker-dot" />
               METHODOLOGY
             </span>
-            <h2>From problem to deployment.</h2>
+            <h2>From problem to reliable system.</h2>
           </div>
-          <p className="section-desc">A structured operational path designed to assure precision and transparency.</p>
+          <p className="section-desc">A practical build path that keeps reasoning flexible while making validation, control, and delivery explicit.</p>
         </div>
         <div className="process-grid">
           {[
             ["01", "Understand", "Understand the problem, desired outcome, available data, and technical requirements.", Icons.Search],
             ["02", "Analyze", "Examine the data, workflow, and constraints to identify the most practical approach.", Icons.Chart],
-            ["03", "Build", "Develop the appropriate data, machine learning, AI, or automation solution.", Icons.Build],
-            ["04", "Deliver", "Provide a usable solution with clear documentation and practical next steps.", Icons.Deliver]
+            ["03", "Build", "Implement the right data, machine learning, AI agent, or automation architecture.", Icons.Build],
+            ["04", "Validate", "Test outputs, enforce deterministic rules, and handle failure paths before delivery.", Icons.Chart],
+            ["05", "Deliver", "Provide a usable system with clear boundaries, documentation, and practical next steps.", Icons.Deliver]
           ].map(([n, title, text, StepIcon]) => (
             <div className="process-item" key={n}>
               <div>
@@ -1427,7 +1493,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="footer">
         <span className="footer-logo">AISAN<span>.</span></span>
-        <p>© 2026 Aisan Tafeem Amair · Data Science & ML Engineering</p>
+        <p>© 2026 Aisan Tafeem Amair · AI & ML Engineering</p>
       </footer>
     </main>
   );

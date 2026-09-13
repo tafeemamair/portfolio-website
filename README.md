@@ -1,3 +1,9 @@
+## Portfolio direction
+
+**AI & ML Engineer | AI Agents • Automation • Intelligent Systems**
+
+This portfolio presents a progression from machine learning and deterministic automation to tool-using AI agents and production-oriented intelligent systems.
+
 # Aisan Tafeem Amair - Portfolio
 
 Personal professional portfolio for Aisan Tafeem Amair.
