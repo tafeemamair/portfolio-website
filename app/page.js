@@ -850,6 +850,8 @@ function CaseStudy({ project }) {
                   src="/emotion-detector-demo.png" 
                   alt="Emotion Detection System Interface" 
                   className="cv-inspector-img"
+                  width={996}
+                  height={788}
                 />
               </div>
               <div className="cv-inspector-metrics">
