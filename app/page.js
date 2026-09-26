@@ -763,6 +763,207 @@ function AutomationWorkflowVisual() {
 }
 
 // =========================================================
+// FLAGSHIP PRODUCT — CREATOR RETENTION COACH VISUAL
+// =========================================================
+
+function CRCProductVisual() {
+  const [activeSegment, setActiveSegment] = useState("hook");
+
+  const segments = {
+    hook: {
+      timestamp: "0:00 - 0:03",
+      drop: "-28.4%",
+      label: "Hook Retention",
+      status: "CRITICAL DROP-OFF",
+      diagnosis: "Verbal preamble delays core hook delivery. Viewer attention drops prior to visual subject reveal.",
+      action: "Trim 1.2s opening silence. Introduce visual pattern interrupt and key topic title in the first frame."
+    },
+    pacing: {
+      timestamp: "0:15 - 0:22",
+      drop: "-9.1%",
+      label: "Mid-Video Pacing",
+      status: "MODERATE SAG",
+      diagnosis: "Monotone vocal cadence and static B-roll segment create a mild viewer pacing drop.",
+      action: "Insert punch-in camera cut at 0:17 and add dynamic kinetic caption emphasis."
+    },
+    climax: {
+      timestamp: "0:38 - 0:52",
+      drop: "+4.2%",
+      label: "Call to Action / Outro",
+      status: "STRONG HOLD",
+      diagnosis: "High viewer retention sustained through core payoff and conclusion.",
+      action: "Maintain concise closing sequence; avoid prolonged outro sign-offs."
+    }
+  };
+
+  const current = segments[activeSegment];
+
+  return (
+    <div className="crc-visual-window">
+      <div className="crc-window-header">
+        <div className="crc-window-dots">
+          <span style={{ background: "#ff5f56" }} />
+          <span style={{ background: "#ffbd2e" }} />
+          <span style={{ background: "#27c93f" }} />
+        </div>
+        <div className="crc-window-url">
+          <span className="crc-url-lock">🔒</span>
+          <span>creatorretentioncoach.in</span>
+        </div>
+        <div className="crc-window-status">
+          <span className="crc-live-dot" />
+          <span>LIVE PRODUCTION</span>
+        </div>
+      </div>
+
+      <div className="crc-window-body">
+        <div className="crc-dashboard-top">
+          <div>
+            <div className="crc-dash-label">RETENTION DIAGNOSTIC ENGINE</div>
+            <div className="crc-dash-title">Short-Form Video Analysis #4182</div>
+          </div>
+          <div className="crc-dash-badge">
+            <span>Next.js · OpenAI · Razorpay</span>
+          </div>
+        </div>
+
+        {/* Dynamic Retention Graph */}
+        <div className="crc-graph-card">
+          <div className="crc-graph-header">
+            <span className="crc-graph-title">RETENTION CURVE & DROP-OFF TELEMETRY</span>
+            <div className="crc-segment-toggles">
+              <button 
+                type="button"
+                className={`crc-segment-btn ${activeSegment === "hook" ? "active" : ""}`}
+                onClick={() => setActiveSegment("hook")}
+              >
+                0:03 Hook
+              </button>
+              <button 
+                type="button"
+                className={`crc-segment-btn ${activeSegment === "pacing" ? "active" : ""}`}
+                onClick={() => setActiveSegment("pacing")}
+              >
+                0:18 Pacing
+              </button>
+              <button 
+                type="button"
+                className={`crc-segment-btn ${activeSegment === "climax" ? "active" : ""}`}
+                onClick={() => setActiveSegment("climax")}
+              >
+                0:45 Payoff
+              </button>
+            </div>
+          </div>
+
+          <div className="crc-svg-wrapper">
+            <svg viewBox="0 0 460 160" className="crc-retention-svg">
+              <defs>
+                <linearGradient id="crcGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#00d2ff" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="#00d2ff" stopOpacity="0.0" />
+                </linearGradient>
+              </defs>
+
+              {/* Grid Lines */}
+              <line x1="40" y1="20" x2="440" y2="20" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
+              <line x1="40" y1="60" x2="440" y2="60" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
+              <line x1="40" y1="100" x2="440" y2="100" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
+              <line x1="40" y1="140" x2="440" y2="140" stroke="rgba(255,255,255,0.12)" />
+
+              {/* Y Axis Labels */}
+              <text x="32" y="24" textAnchor="end" className="crc-svg-axis">100%</text>
+              <text x="32" y="64" textAnchor="end" className="crc-svg-axis">75%</text>
+              <text x="32" y="104" textAnchor="end" className="crc-svg-axis">50%</text>
+              <text x="32" y="144" textAnchor="end" className="crc-svg-axis">0%</text>
+
+              {/* X Axis Labels */}
+              <text x="50" y="156" textAnchor="middle" className="crc-svg-axis">0:00</text>
+              <text x="140" y="156" textAnchor="middle" className="crc-svg-axis">0:15</text>
+              <text x="240" y="156" textAnchor="middle" className="crc-svg-axis">0:30</text>
+              <text x="340" y="156" textAnchor="middle" className="crc-svg-axis">0:45</text>
+              <text x="430" y="156" textAnchor="middle" className="crc-svg-axis">1:00</text>
+
+              {/* Area Fill */}
+              <path
+                d="M 50 20 Q 90 75, 140 85 T 240 92 T 340 100 T 430 115 L 430 140 L 50 140 Z"
+                fill="url(#crcGradient)"
+              />
+
+              {/* Retention Curve Line */}
+              <path
+                d="M 50 20 Q 90 75, 140 85 T 240 92 T 340 100 T 430 115"
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+
+              {/* Highlight Region Marker */}
+              {activeSegment === "hook" && (
+                <g>
+                  <rect x="75" y="15" width="45" height="125" fill="rgba(255, 74, 74, 0.12)" stroke="#ff5f56" strokeDasharray="2 2" strokeWidth="1" />
+                  <circle cx="95" cy="72" r="5" fill="#ff5f56" />
+                  <text x="95" y="60" textAnchor="middle" fill="#ff5f56" className="crc-svg-marker-text">-28.4% DROP</text>
+                </g>
+              )}
+              {activeSegment === "pacing" && (
+                <g>
+                  <rect x="150" y="15" width="55" height="125" fill="rgba(255, 140, 0, 0.12)" stroke="#ff8c00" strokeDasharray="2 2" strokeWidth="1" />
+                  <circle cx="178" cy="88" r="5" fill="#ff8c00" />
+                  <text x="178" y="76" textAnchor="middle" fill="#ff8c00" className="crc-svg-marker-text">PACING SAG</text>
+                </g>
+              )}
+              {activeSegment === "climax" && (
+                <g>
+                  <rect x="330" y="15" width="60" height="125" fill="rgba(0, 230, 118, 0.12)" stroke="#00e676" strokeDasharray="2 2" strokeWidth="1" />
+                  <circle cx="360" cy="102" r="5" fill="#00e676" />
+                  <text x="360" y="90" textAnchor="middle" fill="#00e676" className="crc-svg-marker-text">STABLE HOLD</text>
+                </g>
+              )}
+            </svg>
+          </div>
+        </div>
+
+        {/* AI Diagnosis & Recommendation Box */}
+        <div className="crc-diag-box">
+          <div className="crc-diag-row">
+            <div className="crc-diag-col">
+              <span className="crc-diag-label">SEGMENT // {current.timestamp}</span>
+              <div className="crc-diag-status" style={{
+                color: activeSegment === "hook" ? "#ff5f56" : activeSegment === "pacing" ? "var(--accent-orange)" : "var(--accent-green)"
+              }}>
+                {current.status} ({current.drop})
+              </div>
+            </div>
+            <div className="crc-diag-col right">
+              <span className="crc-diag-label">AI COACH MODULE</span>
+              <div className="crc-diag-model">OpenAI Reasoning Engine</div>
+            </div>
+          </div>
+
+          <div className="crc-diag-content">
+            <div className="crc-diag-item">
+              <span className="crc-diag-subhead">Diagnosis:</span>
+              <p>{current.diagnosis}</p>
+            </div>
+            <div className="crc-diag-item highlight">
+              <span className="crc-diag-subhead">Actionable Improvement:</span>
+              <p>{current.action}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="crc-window-footer">
+        <span>ARCH: NEXT.JS APP ROUTER + OPENAI + RAZORPAY ENTITLEMENT</span>
+        <span>PRODUCTION SAAS</span>
+      </div>
+    </div>
+  );
+}
+
+// =========================================================
 // CASE STUDY COMPONENT (With visual architecture flows)
 // =========================================================
 
@@ -1298,6 +1499,80 @@ export default function Home() {
           </p>
         </div>
         <CapabilitiesConsole />
+      </section>
+
+      {/* FLAGSHIP PRODUCT — CREATOR RETENTION COACH */}
+      <section id="flagship-product" className="section flagship-section">
+        <div className="flagship-container">
+          <div className="flagship-content">
+            <div className="flagship-eyebrow">
+              <span className="flagship-live-dot" />
+              <span>FLAGSHIP PRODUCT</span>
+            </div>
+            <h2>Creator Retention Coach</h2>
+            <p className="flagship-subtitle">
+              Production AI SaaS for short-form content analysis and retention optimization
+            </p>
+            <p className="flagship-desc">
+              A dedicated production platform built to analyze audience retention curves for short-form video content. It detects second-by-second viewer drop-off points, diagnoses pacing and structural bottlenecks, and delivers actionable, timestamp-specific editorial guidance.
+            </p>
+
+            {/* Product Workflow */}
+            <div className="flagship-workflow">
+              <div className="flagship-workflow-header">
+                <span className="flagship-workflow-label">PRODUCT WORKFLOW</span>
+                <span className="flagship-workflow-chain">Analyze → Diagnose → Improve → Re-analyze</span>
+              </div>
+              <div className="flagship-workflow-grid">
+                <div className="flagship-step">
+                  <div className="flagship-step-num">01</div>
+                  <div className="flagship-step-title">Analyze</div>
+                  <p>Ingests retention curves and viewer drop-off timestamp data.</p>
+                </div>
+                <div className="flagship-step">
+                  <div className="flagship-step-num">02</div>
+                  <div className="flagship-step-title">Diagnose</div>
+                  <p>Identifies hook drop-offs, pacing sags, and behavioral patterns.</p>
+                </div>
+                <div className="flagship-step">
+                  <div className="flagship-step-num">03</div>
+                  <div className="flagship-step-title">Improve</div>
+                  <p>Generates targeted script, edit, and pacing adjustments.</p>
+                </div>
+                <div className="flagship-step">
+                  <div className="flagship-step-num">04</div>
+                  <div className="flagship-step-title">Re-analyze</div>
+                  <p>Evaluates revised video iterations against retention benchmarks.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flagship-meta">
+              <div className="flagship-tech-pills">
+                <span className="flagship-tech-pill">Next.js</span>
+                <span className="flagship-tech-pill">React</span>
+                <span className="flagship-tech-pill">OpenAI</span>
+                <span className="flagship-tech-pill">Razorpay</span>
+                <span className="flagship-tech-pill">Time-Series Analytics</span>
+              </div>
+              <div className="flagship-cta-wrap">
+                <a
+                  className="button primary flagship-cta"
+                  href="https://www.creatorretentioncoach.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span>View Live Product</span>
+                  <Icons.External />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="flagship-visual-col">
+            <CRCProductVisual />
+          </div>
+        </div>
       </section>
 
       {/* SELECTED WORK */}
