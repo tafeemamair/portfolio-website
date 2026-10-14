@@ -1701,6 +1701,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CERTIFICATIONS */}
+      <section id="certifications" className="section certifications-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-kicker">
+              <span className="section-kicker-dot" />
+              PROFESSIONAL DEVELOPMENT
+            </span>
+            <h2>Learning by building.</h2>
+          </div>
+          <p className="section-desc">
+            Hands-on learning focused on practical AI systems, agent workflows, and production-oriented integration.
+          </p>
+        </div>
+        <article className="certification-card">
+          <div className="certification-emblem" aria-hidden="true">AI</div>
+          <div className="certification-content">
+            <span className="certification-type">CERTIFICATE OF PARTICIPATION</span>
+            <h3>Build with AI Bootcamp, Hyderabad</h3>
+            <p className="certification-issuer">Google for Developers</p>
+            <p className="certification-description">
+              Participated in hands-on practice covering AI agents, workflow architecture, and integration of generative AI into production-ready systems.
+            </p>
+            <div className="certification-meta">
+              <span>Issued 14 October 2026</span>
+              <span className="certification-status">Participation certificate</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
       {/* PROCESS */}
       <section id="process" className="section">
         <div className="section-heading">
